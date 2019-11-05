@@ -13,6 +13,7 @@
 
 use Illuminate\Support\Facades\Route;
 App\Http\Middleware\Authenticate::class;
+use App\Serie;
 
 Route::get('/', 'WelcomeController@index');
 
