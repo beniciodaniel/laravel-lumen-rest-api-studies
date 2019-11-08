@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers;
 
-class SeriesController {
-    
+use App\Serie;
 
-    public function index () {
-         
-        return [
-            'Lost',
-            'Friends',
-        ];
+class SeriesController
+{
 
+
+    public function index()
+    {
+        return Serie::all();
     }
-
 }
