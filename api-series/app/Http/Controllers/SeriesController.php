@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 class SeriesController
 {
 
-
     public function index()
     {
         return Serie::all();
@@ -17,14 +16,14 @@ class SeriesController
     public function store(Request $request)
     {
         return response()
-            ->json(Serie::create($request->all()), 201);
+            ->json(Serie::create($request->all()), 201); //201 = criado
     }
 
     public function show(int $id)
     {
         $serie = Serie::find($id);
         if (is_null($serie)) {
-            return response()->json('', 204);
+            return response()->json('', 204); //recurso não encontrado
         }
         return response()->json($serie);
     }
@@ -41,5 +40,16 @@ class SeriesController
         $serie->save();
 
         return $serie;
+    }
+
+    public function destroy(int $id)
+    {
+        $qtdadeRecursosRemovidos = Serie::destroy($id);
+        if ($qtdadeRecursosRemovidos === 0) {
+            return response()->json([
+                'erro' => 'Recurso não encontrado'
+            ], 404);
+        }
+        return response()->json('', 204);
     }
 }
