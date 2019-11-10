@@ -32,7 +32,7 @@ abstract class BaseController
     public function update(int $id, Request $request)
     {
         $recurso = $this->classe::find($id);
-        if (is_null($serie)) {
+        if (is_null($recurso)) {
             return response()->json([
                 'erro' => 'Recurso não encontrado'
             ], 404);
