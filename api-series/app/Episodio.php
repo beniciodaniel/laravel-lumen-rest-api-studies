@@ -26,7 +26,7 @@ class Episodio extends Model
         return $assistido;
     }
 
-    public function getNumeroAttribute(int $numero): string
+    public function getNumeroAttribute(int $numero): string //accessor
     {
         return "#" . $numero;
     }
