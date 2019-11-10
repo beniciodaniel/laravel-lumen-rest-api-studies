@@ -9,6 +9,6 @@ class EpisodiosController extends BaseController
 
     public function __construct()
     {
-        $this->classe = Episdio::class;
+        $this->classe = Episodio::class;
     }
 }

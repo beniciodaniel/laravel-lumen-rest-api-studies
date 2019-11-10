@@ -10,9 +10,10 @@ class Episodio extends Model
 {
     public $timestamps = false;
     protected $fillable = [
-        'numero',
         'temporada',
+        'numero',
         'assistido',
+        'serie_id',
     ];
 
     public function serie()
