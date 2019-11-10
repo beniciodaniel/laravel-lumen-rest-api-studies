@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Serie;
 
-class SeriesController
+class SeriesController extends BaseController
 {
 
     public function __construct()
