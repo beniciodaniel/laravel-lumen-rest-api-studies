@@ -9,9 +9,9 @@ abstract class BaseController
 {
     protected $classe;
 
-    public function index()
+    public function index(Request $request)
     {
-        return $this->classe::all();
+        return $this->classe::paginate($request->per_page); //se não passar o per page pela url, ele usa o padrao do Model
     }
 
     public function store(Request $request)
@@ -23,7 +23,7 @@ abstract class BaseController
     public function show(int $id)
     {
         $recurso = $this->classe::find($id);
-        if (is_null($serie)) {
+        if (is_null($recurso)) {
             return response()->json('', 204); //recurso não encontrado
         }
         return response()->json($recurso);
