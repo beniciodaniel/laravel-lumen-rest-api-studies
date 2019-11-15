@@ -33,7 +33,7 @@ class Episodio extends Model
         return "#" . $numero;
     }
 
-    public function getLinksAttribute($links): array
+    public function getLinksAttribute(): array
     {
 
         return [

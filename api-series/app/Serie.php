@@ -25,7 +25,7 @@ class Serie extends Model
         $this->attributes['nome'] = mb_convert_case($nome, MB_CASE_TITLE);
     }
 
-    public function getLinksAttribute($links): array
+    public function getLinksAttribute(): array
     {
 
         return [
