@@ -16,7 +16,8 @@ class EpisodiosController extends BaseController
     {
         $episodios = Episodio::query()
             ->where('serie_id', '=', $serieId)
-            ->get();
+            ->paginate(); //ou get()
+
         return $episodios;
     }
 }
