@@ -18,10 +18,10 @@ class TokenController extends \App\Http\Controllers\Controller
             'password' => 'required'
         ]);
 
-        $usuario = User::where('email', $request->email);
+        $usuario = User::where('email', $request->email)->first();
 
         if (is_null($usuario) || !Hash::check($request->password, $usuario->password)) {
-            return response()->json('ERRO!', 401);
+            return response()->json('USUARIO OU SENHA INVALIDOS', 401);
         }
 
         $token = JWT::encode(
